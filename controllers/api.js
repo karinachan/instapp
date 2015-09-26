@@ -28,9 +28,10 @@ Bitcore.Networks.defaultNetwork = secrets.bitcore.bitcoinNetwork == 'testnet' ? 
  * GET /api
  * List of API examples.
  */
-exports.getApi = function(req, res) {
+exports.getApi = function(req, res, csrf) {
   res.render('api/index', {
-    title: 'API Examples'
+    title: 'API Examples',
+    csrf: csrf
   });
 };
 
@@ -124,18 +125,41 @@ exports.getFacebook = function(req, res, next) {
  * Web scraping example using Cheerio library.
  */
 exports.getScraping = function(req, res, next) {
-  request.get('https://news.ycombinator.com/', function(err, request, body) {
+
+  request.get("https://www.linkedin.com/in/karinachan", function(err, request, body) {
     if (err) return next(err);
     var $ = cheerio.load(body);
-    var links = [];
-    $('.title a[href^="http"], a[href^="https"]').each(function() {
-      links.push($(this));
-    });
-    res.render('api/scraping', {
+
+    var name=$("#bg-blur-profile-picture").attr('alt');
+    var image=$("#bg-blur-profile-picture").attr('src');
+    var overviewsummarycurrent=$("#overview-summary-current").text().slice(7);
+    var summary=$(".sum").text();
+    var industry=$(".industry").text();
+
+
+
+    var headers=$("#background-experience-container").html().slice(214);
+    headers = headers.substring(0, headers.length - 6);
+    console.log(headers);
+
+    var orgs=$("#background-organizations-container").html();
+    console.log(orgs);
+
+    res.render('api/template', {
       title: 'Web Scraping',
-      links: links
+      headers: headers,
+      name: name,
+      image:image,
+      summary:summary,
+      overviewsummarycurrent: overviewsummarycurrent,
+      industry:industry,
+      orgs: orgs
     });
   });
+
+
+
+
 };
 
 /**
@@ -525,6 +549,9 @@ exports.getLinkedin = function(req, res, next) {
     });
   });
 };
+
+
+
 
 /**
  * GET /api/instagram

@@ -1,0 +1,147 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title VShaw PP
+    // Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/
+    link(href='/css/bootstrap.min.css', rel='stylesheet')
+    // Custom CSS
+    link(href='/css/freelancer.css', rel='stylesheet')
+    // Custom Fonts
+    link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Montserrat:400,700', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic', rel='stylesheet', type='text/css')
+    // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+      script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+
+
+  body#page-top.index
+    // Navigation
+    nav.navbar.navbar-default.navbar-fixed-top
+      .container
+        // Brand and toggle get grouped for better mobile display
+        .navbar-header.page-scroll
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+        // Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-right
+            li.hidden
+              a(href='#page-top')
+            li.page-scroll
+              a(href='#about') About
+            li.page-scroll
+              a(href='#experience') Experience
+            li.page-scroll
+              a(href='#connect') Connect
+        // /.navbar-collapse
+      // /.container-fluid
+    // Header
+    header
+      .container
+        .row
+          .col-lg-4
+            img#circle.img(src='#{image}', alt='', align='middle')
+          .col-lg-8
+            .intro-text
+              span.name Hey, I'm #{name}
+              span.skills Currently at !{overviewsummarycurrent}
+              br
+              br
+              hr.star-light
+              p
+                span.sum
+                  | #{summary}
+    // About Section
+    section#about.success
+      .container
+        .row
+          .col-lg-12.text-center
+            h2 About
+            hr.star-primary
+            br
+        .row
+          p(align='center') My specialties include: Java, Python
+          p(align='center') My interests include: Frisbee, Coding
+    // Portfolio Grid Section
+    section#experience
+      .container
+        .row
+          .col-lg-12.text-center
+            h2 Experience
+            hr.star-primary
+            br
+          .col-lg-12.text-center
+            |<div style="text-align:left;">!{headers}</div>
+        .row
+
+
+        .col-lg-12.text-center
+
+    section#resume.success
+      .container
+        .col-lg-12.text-center
+          h2 Resume Highlights
+          hr.star-primary
+          br
+          .row
+            p(align='left') !{orgs}
+            <!-- p(align='center') I am Networking Chair of Wellesley's CS Club.
+            p(align='center') I have played on the Wellesley Whiptails ultimate frisbee team for four years.
+            p(align='center') I studied abroad for a semester in Budapest, Hungary fall 2014. -->
+    // Contact Section
+    section#connect
+      .container
+        .row
+          .col-lg-12.text-center
+            h2 Connect
+            hr.star-primary
+        .row
+          .col-lg-12.text-center
+            ul.list-inline
+              li
+                a.btn-social.btn-outline(href='#')
+                  i.fa.fa-fw.fa-facebook
+              li
+                a.btn-social.btn-outline(href='#')
+                  i.fa.fa-fw.fa-google-plus
+              li
+                a.btn-social.btn-outline(href='#')
+                  i.fa.fa-fw.fa-twitter
+              li
+                a.btn-social.btn-outline(href='#')
+                  i.fa.fa-fw.fa-linkedin
+    // Footer
+    footer
+      .footer-below
+        .container
+          .row
+            .col-lg-12
+              | Copyright © Your Website 2015
+    // Scroll to Top Button (Only visible on small and extra-small screen sizes)
+    .scroll-top.page-scroll.visible-xs.visible-sm
+      a.btn.btn-primary(href='#page-top')
+        i.fa.fa-chevron-up
+    // jQuery
+    script(src='js/jquery.js')
+    // Bootstrap Core JavaScript
+    script(src='js/bootstrap.min.js')
+    // Plugin JavaScript
+    script(src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js')
+    script(src='js/classie.js')
+    script(src='js/cbpAnimatedHeader.js')
+    // Contact Form JavaScript
+    script(src='js/jqBootstrapValidation.js')
+    script(src='js/contact_me.js')
+    // Custom Theme JavaScript
+    script(src='js/freelancer.js')

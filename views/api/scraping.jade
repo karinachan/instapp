@@ -20,8 +20,12 @@ block content
       tr
         th №
         th Title
+        th Date
+        th Description
     tbody
-      each link, index in links
+      each link, index in headers
         tr
           td= index + 1
-          td!= link
+          td!= link[0]
+          td!= link[1].title
+          td!= link[1].date

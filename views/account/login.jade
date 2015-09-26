@@ -42,3 +42,14 @@ block content
         a.btn.btn-block.btn-instagram.btn-social(href='/auth/instagram')
           i.fa.fa-instagram
           | Sign in with Instagram
+
+          form(method='post', enctype='multipart/form-data', action='/sitepopulate')
+    input(type='text', name='Title')
+      |
+      input(type='text', name='Place')
+      |
+      input(type='text', name='What did you do?')
+      |
+      input(type='submit')
+
+</form>

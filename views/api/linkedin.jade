@@ -34,11 +34,18 @@ block content
         dl.dl-horizontal
           dt.text-muted Current
           for company in profile.positions.values
+
             if company.isCurrent
               dd
                 strong= company.title
                 |  at
                 strong  #{company.company.name}
+
+            else
+              dd
+                strong=company.title
+                | at
+                strong #{company.company.name}
           dt.text-muted Previous
             for company in profile.positions.values
               if !company.isCurrent
@@ -46,6 +53,7 @@ block content
                   | #{company.title}
                   |  at
                   | #{company.company.name}
+
           if profile.educations
             dt.text-muted Education
               for education in profile.educations.values
